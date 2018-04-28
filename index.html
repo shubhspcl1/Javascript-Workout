@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Using the event properties</title>
+        <style>
+        .beard {
+              	background: black;
+         		width: 5px;
+         		height: 5px;
+         		position: absolute;
+         		border-radius: 2px;
+         		top: 80px;
+         		left: 15px;
+         	}
+
+         	img{
+         		position: absolute;
+         		top: 50%;
+         		left: 50%;
+         	}
+
+         	body{
+         		background-color: 
+         	}
+
+         	#face{
+         		height: 200px;
+         		width: 200px;
+         	}
+        </style>
+    </head>
+    <body>
+    	<a href="moustache.html">moustachetest</a>
+    
+    <img id="face" src="spoiler.jpg">
+    <div id="message"></div>
+    
+    <script>
+    // 1. Find and store the element we want to listen to events on.
+    var face = document.getElementById("face");
+    // 2. Define the function that will respond to the event.
+    var onMouseMove = function(e) {
+        console.log(e);
+        document.getElementById("message").textContent += "dont spoil me!!! ";         
+        var beard = document.createElement("div");
+        beard.className = "beard";
+        document.body.appendChild(beard);
+        beard.style.top = e.clientY + "px";
+        beard.style.left = e.clientX + "px";
+        
+    };
+    // 3. Add the event listener for the element and function
+    face.addEventListener("mousemove", onMouseMove);
+    </script>
+    </body>
+</html>
