@@ -31,6 +31,7 @@
         </style>
     </head>
     <body>
+    	<a href="moustache.html">moustachetest</a>
     
     <img id="face" src="spoiler.jpg">
     <div id="message"></div>
@@ -41,7 +42,8 @@
     // 2. Define the function that will respond to the event.
     var onMouseMove = function(e) {
         console.log(e);
-        document.getElementById("message").textContent += "dont spoil me!!! ";         var beard = document.createElement("div");
+        document.getElementById("message").textContent += "dont spoil me!!! ";         
+        var beard = document.createElement("div");
         beard.className = "beard";
         document.body.appendChild(beard);
         beard.style.top = e.clientY + "px";
